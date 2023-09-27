@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Style.css" />
+    <title>Detalhes do Produto</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- Imagem do Produto -->
+        <div class="col-6">
+          <img
+            src="_img/boneco_batman.png"
+            class="img-fluid"
+            style="align-items: center; height: 25rem;"
+            alt="batman"
+          />
+        </div>
+
+        <!-- Informações do Produto -->
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col">
+              <h3>Boneco do Batman</h3>
+              <p>
+                Boneco do personagem Batman das historias em quadrinhos.
+              </p>
+              <div>
+                <div class="card border-light mb-3" style="max-width: 18rem">
+                  <div class="card-header">
+                    <h4>Detalhes do Produto</h4>
+                  </div>
+                  <div class="card-body">
+                    <table>
+                      <tr>
+                        <td><strong>Marca:</strong></td>
+                        <td>DC</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Tema:</strong></td>
+                        <td>Liga da Justiça</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Tipo:</strong></td>
+                        <td>Figura de ação</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Cor:</strong></td>
+                        <td>Preto</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Material:</strong></td>
+                        <td>Plástico Resistivel</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p>
+                <strong style="font-size: xx-large; color: green" id="preco"
+                  >R$149.99</strong
+                >
+              </p>
+              Quantidade:
+              <input
+                style="border-radius: 20%; width: 10%"
+                type="number"
+                name="numero"
+                id="numeroInput"
+                value="1"
+                oninput="atualizarPreco(this.value)"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <br />
+              <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#Videos">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Fotos">Fotos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Comentarios">Comentários</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="videoContent" style="display: none">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dT3Cl1ZFMpo?si=hfQt46qaNhRHwDQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div id="fotoContent" style="display: none">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <div class="photo text-center">
+                <img
+                  src="_img/bt1.png"
+                  alt="Foto 1"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="photo text-center">
+                <img
+                  src="_img/bt2.png"
+                  alt="Foto 2"
+                />
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="comentarioContent" style="display: none">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="media mb-3">
+                <img
+                  src="_img/boy.png"
+                  class="mr-3 tm1"
+                  alt="Usuário"
+                  style="border-radius: 50%; width: 10%;"
+                />
+                <div class="media-body">
+                  <h5 class="mt-0">Enzo Rodrigues</h5>
+                  Muito legal, bom custo beneficio, atendimento de qualidade.
+                </div>
+              </div>
+              <div class="media mb-3">
+                <img
+                  src="_img/girl.png"
+                  class="mr-3 tm1"
+                  alt="Usuário"
+                  style="border-radius: 50%; width: 10%;"
+                />
+                
+                <div class="media-body">
+                  <h5 class="mt-0">Julia Pereira</h5>
+                  O produto chegou dentro do prazo, material de boa qualidade.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <script>
+      const video = document.querySelector(".nav-link[href='#Videos']");
+      const foto = document.querySelector(".nav-link[href='#Fotos']");
+      const comentario = document.querySelector(".nav-link[href='#Comentarios']");
+      const videoSecao = document.getElementById("videoContent");
+      const fotoSecao = document.getElementById("fotoContent");
+      const comentarioSecao = document.getElementById("comentarioContent");
+  
+      video.addEventListener("click", () => {
+          videoSecao.style.display = "block";
+          fotoSecao.style.display = "none";
+          comentarioSecao.style.display = "none";
+      });
+  
+      foto.addEventListener("click", () => {
+          videoSecao.style.display = "none";
+          fotoSecao.style.display = "block";
+          comentarioSecao.style.display = "none";
+      });
+  
+      comentario.addEventListener("click", () => {
+          videoSecao.style.display = "none";
+          fotoSecao.style.display = "none";
+          comentarioSecao.style.display = "block";
+      });
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

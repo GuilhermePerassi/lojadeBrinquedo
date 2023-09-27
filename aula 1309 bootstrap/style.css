@@ -1,0 +1,39 @@
+/* Estilo para o contêiner flexível */
+.flex-container {
+    display: flex;
+    align-items: center; /* Centralizar verticalmente */
+}
+
+/* Estilo para a imagem */
+.card-img-custom {
+    width: auto; /* Defina a largura desejada, por exemplo, 300px; */
+    max-height: 500px;
+    border-radius: 10px;
+    margin-right: 20px; /* Espaço à direita da imagem */
+}
+
+/* Estilo para o anúncio */
+#anuncio {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 0px; /* Ajuste o valor conforme necessário para alinhar com a imagem */
+    margin-left: 100px;
+    margin-bottom: 800px;
+}
+
+/* Estilo para o título do anúncio */
+#anuncio h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    width: 500px;
+}
+
+/* Estilo para o texto do anúncio */
+#anuncio p {
+    font-size: 14px;
+    color: #555;
+}
+
